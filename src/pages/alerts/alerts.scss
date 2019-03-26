@@ -1,0 +1,107 @@
+page-alerts {
+.background-image{
+    background-image:  url(../../assets/images/nessty1.jpg);
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.bg-color{
+    background-color:rgba(51, 51, 51, 0.9);
+    opacity: inherit;
+  }
+
+  .bg-size{
+    width: 100%;
+    height: 100%;
+    display: table;
+  }
+
+  .align-btn{
+    text-align: right;
+  }
+
+  .icon-color{
+    color: #a6a6a6;
+}
+
+  .message-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+  }
+
+  .title{
+      font-family: Helvetica;
+      font-weight: bold
+  }
+
+  .btn-align{
+  margin-right:15px;
+  }
+
+  .heart{
+        color: #cc0000;
+    }
+
+    .comment{
+        color: #00acee;
+    }
+
+    /* .share{
+      color: #8ec63f;
+    } */
+
+  .posts{
+      font-family: Arial, Helvetica, sans-serif;
+      color: #8c8c8c;
+  }
+
+  .time{
+      color: #a6a6a6;
+      font-size: 1.2rem;
+      font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  }
+
+   ion-card {
+  margin-top: 1px!important;
+  margin-bottom: 1px!important;
+}
+
+ .ion-icon{
+  font-size: 20px!important;
+  margin-left: 10px!important;
+  margin-right: -15px!important;
+} 
+
+.user-name{
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bold;  
+  }
+
+ion-label {
+  margin: 0!important;
+}
+
+.icon-chat2{
+  color: #8ec63f;
+  margin-right: 5px;
+}
+
+.btn-invite{
+  background-color: #262626!important;
+  margin-left: 75px;
+}
+.btn-align{
+ text-align: center;
+}
+
+.icon-chat{
+    color: #8ec63f;
+  }
+
+}

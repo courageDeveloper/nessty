@@ -1,0 +1,98 @@
+<!--
+  Generated template for the WallPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-buttons start>
+      <button (click)="signOut()" ion-button icon-only>
+        LOGOUT
+        <ion-icon class="icon-chat" name="ios-exit"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <div class="btn-align2">
+      <button style="text-transform: none;" class="btn-invite" small (click)="invite()" ion-button>
+        <ion-icon class="icon-chat2" name="md-person-add"></ion-icon>
+        <span>Invite</span>
+      </button>
+    </div>
+
+
+    <ion-title class="title">Wall</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background-image" no-padding (swipe)="reload()">
+  <ion-toolbar color="secondary">
+    <ion-searchbar placeholder="Enter tag, topic or name" (ionInput)="filterUsers($event)"></ion-searchbar>
+  </ion-toolbar>
+  <div class="bg-color bg-size">
+    <ion-row>
+      <ion-col align-self-end>
+        <button class="btn-align" ion-button small color="secondary" (click)="newPosts()">
+          New Posts
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-card *ngFor="let user of filteredUsers, index as i" no-padding>
+      <ion-row (click)="getPost(user)">
+        <!-- <ion-col col-1> -->
+        <ion-item>
+          <ion-avatar item-left>
+            <img *ngIf="user.image!=''" [src]="user.image" [alt]="user.username" class="avatar" />
+            <img *ngIf="user.image==''" [alt]="user.username" src="assets/images/blue-bird-with-green.png" class="avatar" width="60"
+              height="60">
+          </ion-avatar>
+        </ion-item>
+        <!-- </ion-col> -->
+        <ion-col align-self-start>
+          <ion-card-header>
+            <span class="user-name"> {{user.username}} </span> <span class="time"> -{{user.time}}</span>
+          </ion-card-header>
+          <ion-card-content class="posts">
+            {{user.content}} <span class="tag-color">{{user.taggedText}}</span>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small color="light" (click)="likePost(user)">
+            <ion-icon name="md-heart" [ngClass]="{'heart':user.color==='active'}" class="icon-color"></ion-icon>
+            <div class="icon-num">{{user.hearts}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small color="light" (click)="getPost(user)">
+            <ion-icon name="md-chatbubbles" class="icon-color"></ion-icon>
+            <div class="icon-num">{{user.comments}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="sharePost(user)" icon-left clear small color="light">
+                    <ion-icon name="md-share-alt" class="icon-color"></ion-icon>
+                    <div class="icon-num">{{user.repost}}</div>
+                 </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button *ngIf="user.userid == userId" ion-button icon-left clear small color="light" (click)="deletePost(user)">
+            <ion-icon name="md-trash" class="icon-color"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-infinite-scroll *ngIf="!finishedLoading" (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </div>
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="navPost()"> <ion-icon name="md-create"> </ion-icon> </button>
+  </ion-fab>
+</ion-content>

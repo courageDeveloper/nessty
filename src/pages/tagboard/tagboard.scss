@@ -1,0 +1,39 @@
+page-tagboard {
+ .icon-color{
+        color: #f58320;
+        background-color: transparent!important;
+    }
+    .align-board{
+        text-align: center!important;
+        line-height: 70px;
+    }
+    .badge{
+        font-size: 25px!important;
+        width: 250px;
+        height: 38px;
+        font-family: Helvetica;
+        cursor: pointer;
+        border-radius: 50px;
+        color: black;
+    }
+    .green{
+        background-color: #8ec63f;
+    }
+
+    .orange{
+        background-color: #ffcce6;
+    }
+
+    .black{
+        background-color: #f58320;
+    }
+
+    .purple{
+        background-color: #ffd9b3;
+    }
+
+    .red{
+        background-color: #ecb3ff;
+    }
+
+}

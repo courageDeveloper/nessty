@@ -1,0 +1,116 @@
+ page-wall {
+.bg-color{
+    background-color:rgba(51, 51, 51, 0.9);
+    opacity: inherit;
+  }
+
+  .bg-size{
+    width: 100%;
+    height: 100%;
+    display: table;
+  }
+
+  .avatar{
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 10px;
+    position: absolute;
+  }
+
+  .btn-align{
+      text-align: center;
+      border-radius: 25px;
+      opacity: 0.7;
+      margin-left: 45%;
+  }
+
+  .heart{
+        color: #cc0000!important;
+    }
+
+    .comment{
+        color: #8ec63f;
+    }
+
+  .my-modal {
+    height: 1000px!important;
+    width: 1000px!important;
+} 
+
+.tag-color{
+  color: #8ec63f;
+}
+
+  ion-card {
+  margin-top: 1px!important;
+  margin-bottom: 1px!important;
+}
+
+ion-label {
+  margin: 0!important;
+}
+
+  .background-image{
+    background-image:  url(../../assets/images/nessty1.jpg);
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .icon-color{
+      color: #a6a6a6;
+  }
+
+  .icon-num{
+      color:#cccccc;
+      font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  }
+
+
+  .title{
+      font-family: Helvetica;
+      font-weight: bold
+  }
+  .posts{
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .time{
+      color: #a6a6a6;
+      font-size: 1.2rem;
+      font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  }
+
+  .user-name{
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bold;  
+  }
+
+  .icon-chat{
+    color: #8ec63f;
+  }
+
+  .icon-chat2{
+    color: #8ec63f;
+    margin-right: 5px;
+  }
+
+  .btn-invite{
+    background-color: #262626!important;
+    margin-left: 75px;
+ }
+ .btn-align2{
+   text-align: center;
+ }
+
+
+
+}

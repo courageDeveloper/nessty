@@ -1,0 +1,34 @@
+page-boardselect {
+.without-content {
+        margin-top: 150px;
+        text-align: center;
+        display: table;
+        width: 100%;
+    }
+
+    .without-content .content {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .without-content .content .block-text {
+        font-size: 1.7rem;
+        padding: 20px;
+    }
+      .block-text p:first-child {
+        padding-bottom: 10px;
+    }
+
+    .title{
+        font-family: Helvetica;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .icon-color{
+        color: #f53d3d;
+    }
+    .toggle-color{
+        color: #8ec63f !important;
+    }
+}

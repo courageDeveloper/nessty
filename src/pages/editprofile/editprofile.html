@@ -1,0 +1,78 @@
+<!--
+  Generated template for the EditprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons class="button">
+      <button (click)="closePost()" ion-button icon-only menuToggle>
+      <ion-icon class="icon-color" name="md-close"></ion-icon>
+    </button>
+    </ion-buttons>
+
+    <ion-title class="title">Edit Profile</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="emailForm">
+    <div item-start (click)="picture()" class="image-upload">
+      <ion-avatar>
+        <label for="file-input">
+            <img *ngIf="user.image!=''" class="img-center" [src]="user.image" tooltip="Upload Image" positionH="right" arrow/>
+            <img *ngIf="user.image==''" [alt]="user.username" src="assets/images/blue-bird-with-green.png" tooltip="Upload Image" positionH="right" class="img-center" width="60" height="60" arrow/>
+            <div class="overlay">
+            <ion-icon class="align-icon hover" name="ios-camera"></ion-icon>
+            </div>
+            </label>
+      </ion-avatar>
+    </div>
+    <br>
+    <input *ngIf="showfileinput" accept="image/*" type="file" (change)="handleFiles($event)" />
+    <!-- <img *ngIf="user.image!=''" [src]="_DomSanitizer.bypassSecurityTrustUrl(user.image)">
+    <img *ngIf="user.image==''" [alt]="user.username" src="assets/images/blue-bird-with-green.png" tooltip="Upload Image" positionH="right"
+      class="img-center" width="60" height="60" arrow/> -->
+    <input type="hidden" name="image" [formControl]="emailForm.controls['image']" [(ngModel)]="user.image">
+    <ion-card *ngIf="oncam && !platform.is('cordova')">
+      <ack-webcam [(ref)]="webcam" [options]="options" (onSuccess)="onCamSuccess($event)" (onError)="onCamError($event)"></ack-webcam>
+      <ion-card-content>
+        <ion-item>
+          <a ion-button block margin-bottom color="primary" (click)="camera()">
+                Snap
+              </a>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="align-bottom">
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [formControl]="emailForm.controls['username']" [(ngModel)]="user.username" name="username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" [formControl]="emailForm.controls['email']" [(ngModel)]="user.email" name="email" required></ion-input>
+      </ion-item>
+      <ion-label color="danger" class="error-size" *ngIf="!emailForm.controls.email.valid && emailForm.controls.email.dirty" no-margin>Please enter a valid email.</ion-label>
+
+      <ion-item>
+        <ion-label class="select-label">Select Status</ion-label>
+        <ion-select class="select-input" name="year" [formControl]="emailForm.controls['status']" [(ngModel)]="user.status">
+          <ion-option *ngFor="let year of years" [value]="year.name" [selected]="selectedStatus == year.name">{{year.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <ion-label color="danger" class="error-size" *ngIf="errorMessage" no-margin>{{errorMessage}}</ion-label>
+    <br>
+
+    <button ion-button type="submit" (click)="submit(user)" block [disabled]="!user.username || !user.email">Submit</button>
+  </form>
+</ion-content>

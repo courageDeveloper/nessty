@@ -1,0 +1,100 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+
+    <ion-buttons start>
+      <button class="btn-color" text-lowercase (click)="reload()" medium ion-button>
+        <ion-icon class="icon-refresh" name="ios-refresh"></ion-icon>
+      </button>
+      <button (click)="navPost()" ion-button icon-only>
+        <ion-icon class="icon-chat" name="md-create"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <div class="btn-align">
+      <button style="text-transform: none;" class="btn-invite" small (click)="invite()" ion-button>
+        <ion-icon class="icon-chat2" name="md-person-add"></ion-icon>
+        <span>Invite</span>
+      </button>
+    </div>
+
+    <ion-title class="title">Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background-image" no-padding>
+  <div class="bg-color bg-size">
+
+    <ion-card>
+      <ion-row>
+        <ion-col>
+          <h2 class="text-name" item-left>{{user.username}}</h2>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          </ion-col>
+      <ion-col>
+        <div item-end>
+          <ion-avatar class="ion-avatar" item-right>
+            <label for="file-input">
+              <img *ngIf="user.image!=''" imageViewer class="img-center" [src]="user.image" tooltip="Upload Image" positionH="right" arrow/>
+              <img *ngIf="user.image==''" imageViewer [alt]="user.username" src="assets/images/blue-bird-with-green.png" tooltip="Upload Image" positionH="right"
+                arrow class="img-center" width="160" height="160" />
+            </label>
+          </ion-avatar>
+          <!-- <input id="file-input" type="file" /> -->
+        </div>
+      </ion-col>
+    </ion-row>
+      <ion-card-content>
+        <ion-icon name="ios-mail" color="secondary" class="align-icon"> </ion-icon> <span class="email-text"><a [href]="user.email">
+            {{user.email}} </a></span>
+        <br>
+        <ion-icon name="md-school" color="secondary" class="align-icon"> </ion-icon> <span color="secondary" class="year-text">{{user.status}}</span>
+        <ion-item class="align-item">
+          <ion-avatar class="img-size" item-left>
+            <img src="assets/images/heart.png">
+          </ion-avatar>
+          <h1 class="font"><strong> POINTS:</strong> {{user.points}}</h1>
+        </ion-item>
+        <ion-item>
+          <button ion-button color="secondary" full (click)="editProfile()"> EDIT PROFILE </button>
+        </ion-item>
+        <ion-item>
+          <button ion-button color="secondary" full (click)="changePassword()"> CHANGE PASSWORD </button>
+        </ion-item>
+      </ion-card-content>
+
+    </ion-card>
+    <!-- <div class="pins">
+      <div class="pin container" *ngFor="let cat of categories">
+        <img class="img-curve" [src]="cat.image" />
+        <div [ngClass]="{'overlay':active}">
+          <ion-icon *ngIf="active" class="align-icon2 hover" name="ios-link"></ion-icon>
+        </div>
+        <br>
+        <h2 class="divider">{{(cat.name.length > 18)? (cat.name | slice:0:18)+"...":(cat.name)}}</h2>
+      </div>
+    </div> -->
+  </div>
+  <!-- this fab is placed at bottom right -->
+  <!-- <ion-fab bottom right>
+    <button ion-fab color="danger"><ion-icon name="share"> </ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab class="twitter" (click)="shareTwitter()"><ion-icon name="logo-twitter"> </ion-icon></button>
+      <button ion-fab class="facebook" (click)="shareFacebook()"><ion-icon name="logo-facebook"> </ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="left">
+      <button ion-fab class="whatsapp" (click)="shareWhatsapp()"><ion-icon name="logo-whatsapp"> </ion-icon></button> 
+      <button ion-fab class="link" (click)="share()"><ion-icon name="ios-link"> </ion-icon></button>
+    </ion-fab-list>
+  </ion-fab> -->
+</ion-content>

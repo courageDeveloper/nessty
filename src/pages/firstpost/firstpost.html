@@ -1,0 +1,47 @@
+<!--
+  Generated template for the FirstpostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--
+  Generated template for the PostPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content no-padding class="background-image">
+  <div class="bg-color">
+    <span class="aligntext" (click)="navWall()"> <strong> SKIP  </strong> </span>
+    <div class="position">
+      <h1 class="subtext"><strong>Give advice, share opinions or ask a question!</strong></h1>
+
+      <form margin-top class="text-item">
+        <ion-item class="border">
+          <ion-label>
+            <ion-avatar item-left>
+              <img *ngIf="user.image!=''" [alt]="user.username" [src]="user.image" class="avatar" width="60" height="60">
+              <img *ngIf="user.image==''" [alt]="user.username" src="assets/images/blue-bird-with-green.png" class="avatar" width="60" height="60">
+            </ion-avatar>
+          </ion-label>
+          <ion-textarea name="message" rows="7" maxLength="250" placeholder="Hi! What's on your mind?" [(ngModel)]="posts.content" (ngModelChange)="textLength($event)"></ion-textarea>
+        </ion-item>
+
+        <ion-row>
+          <ion-col>
+            <button item-left class="tag" ion-button small (click)="navTag()">
+               Tag It?
+                </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button ion-button medium color="secondary" (click)="post(posts)">
+               POST
+                </button>
+            <span item-right class="icon-num"> {{textLeft}} </span>
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+  </div>
+</ion-content>

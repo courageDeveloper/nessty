@@ -1,0 +1,70 @@
+<!--
+  Generated template for the BoardsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button class="btn-color" text-lowercase (click)="reload()" medium ion-button>
+        <ion-icon class="icon-refresh" name="ios-refresh"></ion-icon>
+      </button>
+      <button (click)="navPost()" ion-button icon-only>
+        <ion-icon class="icon-chat" name="md-create"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <div class="btn-align">
+        <button style="text-transform: none;" class="btn-invite" small (click)="invite()" ion-button>
+          <ion-icon class="icon-chat2" name="md-person-add"></ion-icon>
+           <span>Invite</span>
+        </button>
+      </div>
+
+    <ion-title class="title">
+     Experts
+    </ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background-image" no-padding (swipe)="reload()">
+  <div class="bg-color bg-size">
+    <span class="cat-style">CATEGORY FILTER:</span>
+    <span *ngFor="let cat of categories" class="cat-style">
+      <a [href]="cat.link" target="_blank">{{cat.name}}</a>
+    </span>
+    
+    <div class="pins">
+      <div class="pin container" *ngFor="let board of boardsObjArray">
+        <br>
+        <h2 class="divider">{{(board.title.length > 18)? (board.title | slice:0:18)+"...":(board.title)}}</h2>
+        <br>
+        <a [href]="board.link" target="_blank"> <img class="img-curve" [src]="board.image" />
+          <div [ngClass]="{'overlay':active}">
+            <ion-icon *ngIf="active" class="align-icon hover" name="ios-link"></ion-icon>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="without-content">
+      <div class="content" *ngIf="errorMessage!=null">
+        <div>
+          <ion-icon color="formdirty" name="information-circle" style="font-size: 80px;"></ion-icon>
+        </div>
+        <div class="block-text">
+          <p><b>Refresh Page!</b></p>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content class="infinite-loading-text" loadingSpinner="bubbles" loadingText="Loading..."> </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="navEditBoard()"> <ion-icon name="md-cog"> </ion-icon> </button>
+  </ion-fab>
+</ion-content>

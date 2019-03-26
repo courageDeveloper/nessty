@@ -1,0 +1,21 @@
+<!--
+  Generated template for the WelcomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content [class.backgroundimage]="active">
+    <div class="without-content" [class.bgcolor]="active">
+        <div class="content">
+            <span class="aligntext" (click)="navWall()"> <strong> SKIP  </strong> </span>
+            <div class="block-text">
+                <p><span [@elementState]="state" class="block-text"> {{text}} </span>
+                    <img *ngIf="show" [src]="textNessty" width="250px" class="block-text-title" [@elementState]="state"/><br>
+                    <span class="sub-title" [@elementState]="state">{{textUnleash}}</span>
+                </p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</ion-content>

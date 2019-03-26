@@ -1,0 +1,117 @@
+page-post {
+    $settings-text-color-header: #8ec63f;
+    $settings-font-size-header: 24px;
+    $settings-font-weight-header: 300;
+
+    h1 {
+      color: $settings-text-color-header;
+      font-size: $settings-font-size-header;
+      font-weight: bold;
+      line-height: 29px;
+      margin-bottom: 40px;
+    }
+
+    .bg-color{
+    background-color:rgba(51, 51, 51, 0.9);
+    opacity: inherit;
+    width: 100%;
+    height: 100%;
+    display: table;
+  }
+
+  
+
+  .position{
+    margin-top: 80px;
+}
+.color:last-child{
+    color:#00acee;
+    font-family: lato;
+}
+.tag{
+    background-color: #00acee!important;
+    border-radius: 50px;
+}
+
+::-webkit-input-placeholder {
+      font-style: italic;
+         }
+    :-moz-placeholder {
+      font-style: italic;  
+        }
+   ::-moz-placeholder {
+      font-style: italic;  
+       }
+   :-ms-input-placeholder {  
+       font-style: italic; 
+         }
+
+  .background-image{
+    background-image:  url(./../assets/images/nessty1.jpg);
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+ .title{
+      font-family: Helvetica;
+      font-weight: bold;
+  }
+    .align-text{
+        text-align: center;
+        font-family:Helvetica;
+        /* margin-left: 100px; */
+    }
+   .subtext{
+        text-align: center;
+        font-family:Helvetica;
+        margin-top: 15px;
+    }
+    .quote{
+        text-align: center;
+        font-family:Helvetica;
+        font-style: italic;
+        color: #8ec63f;
+    }
+    .icon-color{
+        color: red;
+    }
+    .button{
+        float: left;
+    }
+    .text-item{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+     .border{
+        border: solid 1px;
+        border-color: #8ec63f;
+        border-radius: 25px;
+    }
+    .text-size{
+   /*  width: 100%;
+    height: 100vw; */
+    }
+.btn-post{
+    background-color: #f58320;
+}
+
+.icon-size{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.icon-num{
+      font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+      position: absolute;
+      left: -35px;
+      top: 20px;
+      color: #cccccc;
+      //font-weight: bold;
+  }
+}

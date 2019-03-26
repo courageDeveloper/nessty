@@ -1,0 +1,56 @@
+<!--
+  Generated template for the BoardselectPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>boardselect</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="button">
+      <button (click)="closePost()" ion-button icon-only menuToggle>
+        <ion-icon class="icon-color" name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title class="title">
+      Select Boards
+    </ion-title>
+    
+    <ion-buttons start>
+      <button (click)="editUser()" ion-button icon-only>
+        <ion-icon name="ios-exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div style="text-align: center"><i>Choose board you want displayed</i></div>
+  <ion-list>
+    <ion-item *ngFor="let cat of categories">
+      <ion-thumbnail item-start>
+        <img [src]="cat.image">
+      </ion-thumbnail>
+      <ion-label>{{cat.name}}</ion-label>
+      <ion-toggle color="danger" class="toggle-color" (ngModelChange)="getName(cat,$event)" [(ngModel)]="cat.togglestatus"></ion-toggle>
+    </ion-item>
+    <div class="without-content">
+      <div class="content" *ngIf="errorMessage!=null">
+        <div>
+          <ion-icon color="formdirty" name="information-circle" style="font-size: 80px;"></ion-icon>
+        </div>
+        <div class="block-text">
+          <p><b>Refresh Page!</b></p>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

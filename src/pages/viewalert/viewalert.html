@@ -1,0 +1,135 @@
+<!--
+  Generated template for the ViewalertPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons class="button" end>
+      <button (click)="closePost()" ion-button icon-only menuToggle>
+        <ion-icon class="icon-color" name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title class="title">Alert</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="background-image" no-padding>
+  <div class="bg-color bg-size">
+    <ion-card no-padding>
+      <ion-row>
+        <!-- <ion-col col-1> -->
+        <ion-item>
+          <ion-avatar item-left>
+            <img *ngIf="user.image!=''" [src]="user.image" [alt]="user.username" class="avatar" />
+            <img *ngIf="user.image==''" [alt]="user.username" src="assets/images/blue-bird-with-green.png" class="avatar" width="60"
+              height="60">
+          </ion-avatar>
+        </ion-item>
+        <!-- </ion-col> -->
+        <ion-col align-self-start>
+          <ion-card-header>
+            <span class="user-name"> {{user.username}} </span> <span class="time"> - {{post.time}} </span>
+          </ion-card-header>
+          <ion-card-content class="posts">
+            {{post.content}}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <!-- <ion-col>
+          <button ion-button icon-left clear (click)="likePost(post)" small color="light">
+            <ion-icon [ngClass]="{'heart':post.color==='active'}" name="md-heart" class="icon-color"></ion-icon>
+            <div class="icon-num">{{post.hearts}}</div>
+          </button>
+        </ion-col> -->
+       <!--  <ion-col>
+          <button ion-button icon-left (click)="likePost(notify)" clear small color="light">
+            <ion-icon name="md-chatbubbles" class="icon-color"></ion-icon>
+            <div class="icon-num">{{notify.comment}}</div>
+          </button>
+        </ion-col> -->
+       <!--  <ion-col>
+          <button ion-button icon-left clear small color="light">
+            <ion-icon name="md-share-alt" class="icon-color"></ion-icon>
+            <div class="icon-num">{{notify.repost}}</div>
+          </button>
+        </ion-col> -->
+       <!--  <ion-col center text-center>
+          <button ion-button icon-left (click)="deletePost(post)" clear small color="light">
+            <ion-icon name="md-trash" class="icon-color"></ion-icon>
+          </button>
+        </ion-col> -->
+      </ion-row>
+    </ion-card>
+   <!--  <ion-card class="card-color">
+      <ion-row>
+        <ion-col>
+          <img *ngIf="loginUser.image!=''" [src]="loginUser.image" [alt]="loginUser.username" class="avatar" />
+          <img *ngIf="loginUser.image==''" [alt]="loginUser.username" src="assets/images/blue-bird-with-green.png" class="avatar" width="60"
+            height="60">
+        </ion-col>
+      </ion-row>
+      <ion-card-content>
+        <form margin-top>
+          <div input-field>
+            <ion-item no-padding class="item-color">
+              <ion-textarea maxLength="250" class="text-input" type="text" placeholder="Comment on post" [(ngModel)]="message" [ngModelOptions]="{standalone: true}"
+                (ngModelChange)="textLength($event)"></ion-textarea>
+            </ion-item>
+          </div>
+          <ion-row>
+            <ion-col>
+              <button item-left class="tag" ion-button small (click)="navTag()">
+                Tag It?
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+              <span item-left class="icon-num"> {{textLeft}} </span>
+              <button ion-button (click)="commentPost(comment)" medium color="secondary">
+                Comment
+              </button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-card-content>
+    </ion-card> -->
+    <div class="comment">
+      COMMENTS
+    </div>
+    <ion-content no-scroll>
+      <ion-card [virtualScroll]="commentsArray" [virtualTrackBy]="trackByName">
+        <ion-row *virtualItem="let comment">
+          <ion-col col-3>
+
+          </ion-col>
+          <ion-col align-self-start>
+            <ion-card-header>
+              <ion-item class="col-align">
+                <ion-avatar item-left>
+                  <img *ngIf="comment.image!=''" [src]="comment.image" [alt]="comment.username" class="avatar" />
+                  <img *ngIf="comment.image==''" [alt]="comment.username" src="assets/images/blue-bird-with-green.png" class="avatar" width="60"
+                    height="60">
+                </ion-avatar>
+              </ion-item>
+              <span class="user-name"> {{comment.username}} </span> <span class="time"> - {{comment.time}} </span>
+             <!--  <button ion-button icon-left class="trash-align" clear small color="light" (click)="deleteComment(comment)">
+                <ion-icon name="md-trash" class="icon-color"></ion-icon>
+              </button> -->
+            </ion-card-header>
+            <ion-card-content class="posts">
+              {{comment.comment}} <span *ngIf="comment.comment.indexOf('#') > -1" class="tag-color">{{comment.taggedText}}</span>
+              <hr class="divide-line">
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-content>
+  </div>
+</ion-content>

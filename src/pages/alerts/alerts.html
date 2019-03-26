@@ -1,0 +1,67 @@
+<!--
+  Generated template for the AlertsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button (click)="navPost()" ion-button icon-only>
+        <ion-icon class="icon-chat" name="md-create"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <div class="btn-align">
+      <button style="text-transform: none;" class="btn-invite" small (click)="invite()" ion-button>
+        <ion-icon class="icon-chat2" name="md-person-add"></ion-icon>
+        <span>Invite</span>
+      </button>
+    </div>
+
+
+    <ion-title class="title">Notifications</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="background-image" no-padding (swipe)="reload()">
+  <ion-toolbar color="secondary">
+    <ion-searchbar placeholder="Enter tag, topic or name" (ionInput)="filterUsers($event)"></ion-searchbar>
+  </ion-toolbar>
+  <div class="bg-color bg-size">
+    <ion-card *ngFor="let notify of filteredNotifications" no-padding>
+      <ion-row>
+        <!-- <ion-col col-1> -->
+        <ion-item>
+          <ion-icon class="ion-icon" item-left [name]="notify.action" [ngClass]="{'heart':notify.color==='active', 'comment':notify.color==='activecomment', 'share': notify.color==='activeshare'}"></ion-icon>
+          <ion-avatar>
+            <img *ngIf="notify.image!=''" [src]="notify.image" item-left [alt]="notify.username" class="avatar" />
+            <img *ngIf="notify.image==''" [alt]="notify.username" src="assets/images/blue-bird-with-green.png" class="avatar" width="60"
+              height="60">
+          </ion-avatar>
+        </ion-item>
+        <!-- </ion-col> -->
+        <ion-col align-self-start>
+          <ion-card-header>
+            <span class="user-name"> {{notify.username}} </span> <span class="message-text">{{notify.message}}</span>
+            <span class="time"> -{{notify.time}} </span>
+          </ion-card-header>
+          <ion-card-content class="posts">
+            {{notify.post}}
+            <div class="align-btn">
+            <button ion-button icon-left clear small color="light" (click)="deleteAlert(notify)">
+                <ion-icon name="md-trash" class="icon-color"></ion-icon>
+              </button>
+              </div>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+ <ion-infinite-scroll *ngIf="!finishedLoading" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+</div>
+</ion-content>

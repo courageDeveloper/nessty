@@ -1,0 +1,57 @@
+<!-- Themes  register-flat-->
+<ion-content class="background-image" *ngIf="data != null">
+  <ion-grid no-padding class="bg-color">
+    <!-- logo -->
+    <ion-row header align-items-start align-items-stretch>
+      <!-- Section form>-->
+      <ion-col col-10 offset-1 col-md-6 offset-md-3>
+        <form padding>
+          <ion-row class="wlm-msg" align-items-start>
+            <ion-col align-self-baseline col-12>
+              <ion-list text-center>
+                <img src="assets/images/Nesstynew.png" width="200px" height="200px" />
+              </ion-list>
+              <h1><strong>Yay, let's talk!</strong> {{data.subtitle}}</h1>
+            </ion-col>
+          </ion-row>
+          <!-- Input-field -->
+          <ion-row>
+            <ion-col col-12>
+              <div input-field>
+                <!-- Input-field-text -->
+                <ion-item no-padding>
+                  <ion-input class="text-input" type="text" placeholder="Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"></ion-input>
+                  <!--               <ion-label no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>
+ --></ion-item>
+                <!-- Input-field-password -->
+                <ion-item no-padding>
+                  <ion-input class="text-input" type="password" [placeholder]="data.txtPassword" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>
+                  <!-- <ion-label no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label> -->
+                </ion-item>
+              </div>
+              <ion-label color="danger" class="error-size" *ngIf="errorMessage" no-margin>{{errorMessage}}</ion-label>
+              <!-- Login button -->
+              <ion-col col-12 no-padding>
+                <button no-margin ion-button color="primary" full text-uppercase (click)="login(user)">{{data.btnLogin}}</button>
+              </ion-col>
+
+              <!-- Description -->
+              <div description text-center>
+                <ion-row>
+                  <!-- Reset your password button -->
+                  <ion-col col-12 no-padding no-margin>
+                    <p no-margin no-padding class="lbl-color">{{data.txtForgotPassword}} <a (click)="navReset()">{{data.btnResetYourPassword}}</a> </p>
+                  </ion-col>
+                  <!-- Signup now button -->
+                  <ion-col col-12 padding>
+                    <p no-margin no-padding>{{data.txtSignupnow}} <a (click)="navLogin()">{{data.btnSignupnow}}</a> </p>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

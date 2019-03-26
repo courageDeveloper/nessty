@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "744746575299",
+    "firebase_url": "https://nessty-be23f.firebaseio.com",
+    "project_id": "nessty-be23f",
+    "storage_bucket": "nessty-be23f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744746575299:android:1f25bc084314e299",
+        "android_client_info": {
+          "package_name": "com.nessty.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744746575299-gub612gg1h48ppieov013vt038pqr419.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nessty.app",
+            "certificate_hash": "be617eef802ea7a2677e735e2db61e5a5543a6cd"
+          }
+        },
+        {
+          "client_id": "744746575299-rdokf50srmrmvqn0slog7hrja728hf2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrBivZElTVIAjYyC8Y5L9daF5L_aIe2Do"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744746575299-rdokf50srmrmvqn0slog7hrja728hf2n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "744746575299-604jq67mo137c06fhmvr27nlofhnvaeq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nessty.app"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
