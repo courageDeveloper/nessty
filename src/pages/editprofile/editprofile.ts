@@ -172,14 +172,10 @@ export class EditprofilePage {
 
 
   handleFiles(event) {
-    console.log(event);
     this.files = event.target.files;
-    console.log(this.files);
   }
 
   submit(user: Users) {
-    console.log(user.email);
-    console.log(this.user.email);
     if (this.firebaseService.authenticated == false) {
       let alert = this.alertCtrl.create({
         title: 'Login',

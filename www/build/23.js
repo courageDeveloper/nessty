@@ -1,1 +1,161 @@
-webpackJsonp([23],{535:function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),t.d(e,"LoginFlatModule",function(){return r});var o=t(0),i=t(16),a=t(561),s=this&&this.__decorate||function(n,e,t,o){var i,a=arguments.length,s=a<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,t):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(n,e,t,o);else for(var r=n.length-1;r>=0;r--)(i=n[r])&&(s=(a<3?i(s):a>3?i(e,t,s):i(e,t))||s);return a>3&&s&&Object.defineProperty(e,t,s),s},r=function(){function n(){}return n=s([Object(o.NgModule)({declarations:[a.a],imports:[i.n.forChild(a.a)],exports:[a.a],schemas:[o.CUSTOM_ELEMENTS_SCHEMA]})],n)}()},561:function(n,e,t){"use strict";t.d(e,"a",function(){return l});var o=t(0),i=t(16),a=t(90),s=this&&this.__decorate||function(n,e,t,o){var i,a=arguments.length,s=a<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,t):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(n,e,t,o);else for(var r=n.length-1;r>=0;r--)(i=n[r])&&(s=(a<3?i(s):a>3?i(e,t,s):i(e,t))||s);return a>3&&s&&Object.defineProperty(e,t,s),s},r=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},l=function(){function n(n,e,t){var o=this;this.navCtrl=n,this.navParams=e,this.firebaseService=t,this.user={username:"",password:"",email:"",points:0,image:"",status:"",online:!1},this.onEvent=function(n){("onLogin"!=n||o.validate())&&o.events[n]&&o.events[n]({username:o.username,password:o.password})},this.isUsernameValid=!0,this.isPasswordValid=!0}return n.prototype.login=function(n){var e=this;console.log(n),this.errorMessage=" ",this.firebaseService.login(n).catch(function(n){e.errorMessage=n.message}).then(function(n){e.emailVerification=JSON.parse(localStorage.getItem("emailVerification")),null!=e.errorMessage&&" "!=e.errorMessage||(console.log(e.emailVerification),setTimeout(function(){if(console.log(e.emailVerification),1==e.emailVerification){console.log(e.firebaseService.usersObject);var n=e.firebaseService.usersObject.$key;e.localStorageItem=localStorage.setItem("userId",n),e.firebaseService.usersObject.points+=1,e.firebaseService.updateUser2(e.firebaseService.usersObject),e.navCtrl.push("FirstpostPage")}else 0==e.emailVerification&&(e.errorMessage="Please verify email before permitted to login, if verified click login button again")},1e3))})},n.prototype.validate=function(){return this.isUsernameValid=!0,this.isPasswordValid=!0,this.username&&0!=this.username.length||(this.isUsernameValid=!1,console.log("please add data")),this.password&&0!=this.password.length||(this.isPasswordValid=!1),this.isPasswordValid&&this.isUsernameValid},n.prototype.navLogin=function(){this.navCtrl.push("RegisterPage")},n.prototype.navReset=function(){this.navCtrl.push("ResetpasswordPage")},s([Object(o.Input)(),r("design:type",Object)],n.prototype,"data",void 0),s([Object(o.Input)(),r("design:type",Object)],n.prototype,"events",void 0),n=s([Object(o.Component)({selector:"login-flat",template:'\x3c!-- Themes  register-flat--\x3e\n\n<ion-content class="background-image" *ngIf="data != null">\n\n  <ion-grid no-padding class="bg-color">\n\n    \x3c!-- logo --\x3e\n\n    <ion-row header align-items-start align-items-stretch>\n\n      \x3c!-- Section form>--\x3e\n\n      <ion-col col-10 offset-1 col-md-6 offset-md-3>\n\n        <form padding>\n\n          <ion-row class="wlm-msg" align-items-start>\n\n            <ion-col align-self-baseline col-12>\n\n              <ion-list text-center>\n\n                <img src="assets/images/Nesstynew.png" width="200px" height="200px" />\n\n              </ion-list>\n\n              <h1><strong>Yay, let\'s talk!</strong> {{data.subtitle}}</h1>\n\n            </ion-col>\n\n          </ion-row>\n\n          \x3c!-- Input-field --\x3e\n\n          <ion-row>\n\n            <ion-col col-12>\n\n              <div input-field>\n\n                \x3c!-- Input-field-text --\x3e\n\n                <ion-item no-padding>\n\n                  <ion-input class="text-input" type="text" placeholder="Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"></ion-input>\n\n                  \x3c!--               <ion-label no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>\n\n --\x3e</ion-item>\n\n                \x3c!-- Input-field-password --\x3e\n\n                <ion-item no-padding>\n\n                  <ion-input class="text-input" type="password" [placeholder]="data.txtPassword" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>\n\n                  \x3c!-- <ion-label no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label> --\x3e\n\n                </ion-item>\n\n              </div>\n\n              <ion-label color="danger" class="error-size" *ngIf="errorMessage" no-margin>{{errorMessage}}</ion-label>\n\n              \x3c!-- Login button --\x3e\n\n              <ion-col col-12 no-padding>\n\n                <button no-margin ion-button color="primary" full text-uppercase (click)="login(user)">{{data.btnLogin}}</button>\n\n              </ion-col>\n\n\n\n              \x3c!-- Description --\x3e\n\n              <div description text-center>\n\n                <ion-row>\n\n                  \x3c!-- Reset your password button --\x3e\n\n                  <ion-col col-12 no-padding no-margin>\n\n                    <p no-margin no-padding class="lbl-color">{{data.txtForgotPassword}} <a (click)="navReset()">{{data.btnResetYourPassword}}</a> </p>\n\n                  </ion-col>\n\n                  \x3c!-- Signup now button --\x3e\n\n                  <ion-col col-12 padding>\n\n                    <p no-margin no-padding>{{data.txtSignupnow}} <a (click)="navLogin()">{{data.btnSignupnow}}</a> </p>\n\n                  </ion-col>\n\n                </ion-row>\n\n              </div>\n\n            </ion-col>\n\n          </ion-row>\n\n        </form>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'}),r("design:paramtypes",[i.q,i.r,a.a])],n)}()}});
+webpackJsonp([23],{
+
+/***/ 535:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginFlatModule", function() { return LoginFlatModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_flat__ = __webpack_require__(561);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var LoginFlatModule = /** @class */ (function () {
+    function LoginFlatModule() {
+    }
+    LoginFlatModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__login_flat__["a" /* LoginFlat */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login_flat__["a" /* LoginFlat */]),
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_2__login_flat__["a" /* LoginFlat */]
+            ],
+            schemas: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]]
+        })
+    ], LoginFlatModule);
+    return LoginFlatModule;
+}());
+
+//# sourceMappingURL=login-flat.module.js.map
+
+/***/ }),
+
+/***/ 561:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginFlat; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_service__ = __webpack_require__(90);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LoginFlat = /** @class */ (function () {
+    function LoginFlat(navCtrl, navParams, firebaseService) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.firebaseService = firebaseService;
+        this.user = {
+            username: '',
+            password: '',
+            email: '',
+            points: 0,
+            image: '',
+            status: '',
+            online: false
+        };
+        this.onEvent = function (event) {
+            if (event == "onLogin" && !_this.validate()) {
+                return;
+            }
+            if (_this.events[event]) {
+                _this.events[event]({
+                    'username': _this.username,
+                    'password': _this.password
+                });
+            }
+        };
+        this.isUsernameValid = true;
+        this.isPasswordValid = true;
+    }
+    LoginFlat.prototype.login = function (user) {
+        var _this = this;
+        console.log(user);
+        this.errorMessage = " ";
+        this.firebaseService.login(user).catch(function (error) {
+            _this.errorMessage = error.message;
+        }).then(function (res) {
+            _this.emailVerification = JSON.parse(localStorage.getItem('emailVerification'));
+            if (_this.errorMessage == null || _this.errorMessage == " ") {
+                console.log(_this.emailVerification);
+                setTimeout(function () {
+                    console.log(_this.emailVerification);
+                    if (_this.emailVerification == true) {
+                        console.log(_this.firebaseService.usersObject);
+                        var uid = _this.firebaseService.usersObject.$key;
+                        _this.localStorageItem = localStorage.setItem('userId', uid);
+                        _this.firebaseService.usersObject.points += 1;
+                        _this.firebaseService.updateUser2(_this.firebaseService.usersObject);
+                        _this.navCtrl.push("FirstpostPage");
+                    }
+                    else if (_this.emailVerification == false) {
+                        _this.errorMessage = "Please verify email before permitted to login, if verified click login button again";
+                    }
+                }, 1000);
+            }
+        });
+    };
+    LoginFlat.prototype.validate = function () {
+        this.isUsernameValid = true;
+        this.isPasswordValid = true;
+        if (!this.username || this.username.length == 0) {
+            this.isUsernameValid = false;
+            console.log("please add data");
+        }
+        if (!this.password || this.password.length == 0) {
+            this.isPasswordValid = false;
+        }
+        return this.isPasswordValid && this.isUsernameValid;
+    };
+    LoginFlat.prototype.navLogin = function () {
+        this.navCtrl.push('RegisterPage');
+    };
+    LoginFlat.prototype.navReset = function () {
+        this.navCtrl.push('ResetpasswordPage');
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], LoginFlat.prototype, "data", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], LoginFlat.prototype, "events", void 0);
+    LoginFlat = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'login-flat',template:/*ion-inline-start:"C:\Users\IRORO\Desktop\ionicprojects\nessty\src\components\login\login-flat\login-flat.html"*/'<!-- Themes  register-flat-->\n\n<ion-content class="background-image" *ngIf="data != null">\n\n  <ion-grid no-padding class="bg-color">\n\n    <!-- logo -->\n\n    <ion-row header align-items-start align-items-stretch>\n\n      <!-- Section form>-->\n\n      <ion-col col-10 offset-1 col-md-6 offset-md-3>\n\n        <form padding>\n\n          <ion-row class="wlm-msg" align-items-start>\n\n            <ion-col align-self-baseline col-12>\n\n              <ion-list text-center>\n\n                <img src="assets/images/Nesstynew.png" width="200px" height="200px" />\n\n              </ion-list>\n\n              <h1><strong>Yay, let\'s talk!</strong> {{data.subtitle}}</h1>\n\n            </ion-col>\n\n          </ion-row>\n\n          <!-- Input-field -->\n\n          <ion-row>\n\n            <ion-col col-12>\n\n              <div input-field>\n\n                <!-- Input-field-text -->\n\n                <ion-item no-padding>\n\n                  <ion-input class="text-input" type="text" placeholder="Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"></ion-input>\n\n                  <!--               <ion-label no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>\n\n --></ion-item>\n\n                <!-- Input-field-password -->\n\n                <ion-item no-padding>\n\n                  <ion-input class="text-input" type="password" [placeholder]="data.txtPassword" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>\n\n                  <!-- <ion-label no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label> -->\n\n                </ion-item>\n\n              </div>\n\n              <ion-label color="danger" class="error-size" *ngIf="errorMessage" no-margin>{{errorMessage}}</ion-label>\n\n              <!-- Login button -->\n\n              <ion-col col-12 no-padding>\n\n                <button no-margin ion-button color="primary" full text-uppercase (click)="login(user)">{{data.btnLogin}}</button>\n\n              </ion-col>\n\n\n\n              <!-- Description -->\n\n              <div description text-center>\n\n                <ion-row>\n\n                  <!-- Reset your password button -->\n\n                  <ion-col col-12 no-padding no-margin>\n\n                    <p no-margin no-padding class="lbl-color">{{data.txtForgotPassword}} <a (click)="navReset()">{{data.btnResetYourPassword}}</a> </p>\n\n                  </ion-col>\n\n                  <!-- Signup now button -->\n\n                  <ion-col col-12 padding>\n\n                    <p no-margin no-padding>{{data.txtSignupnow}} <a (click)="navLogin()">{{data.btnSignupnow}}</a> </p>\n\n                  </ion-col>\n\n                </ion-row>\n\n              </div>\n\n            </ion-col>\n\n          </ion-row>\n\n        </form>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\IRORO\Desktop\ionicprojects\nessty\src\components\login\login-flat\login-flat.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_firebase_service__["a" /* FirebaseServiceProvider */]])
+    ], LoginFlat);
+    return LoginFlat;
+}());
+
+//# sourceMappingURL=login-flat.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=23.js.map

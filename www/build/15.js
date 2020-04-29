@@ -1,1 +1,101 @@
-webpackJsonp([15],{548:function(n,e,o){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),o.d(e,"ResetpasswordPageModule",function(){return s});var t=o(0),i=o(16),r=o(582),a=this&&this.__decorate||function(n,e,o,t){var i,r=arguments.length,a=r<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,o):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(n,e,o,t);else for(var s=n.length-1;s>=0;s--)(i=n[s])&&(a=(r<3?i(a):r>3?i(e,o,a):i(e,o))||a);return r>3&&a&&Object.defineProperty(e,o,a),a},s=function(){function n(){}return n=a([Object(t.NgModule)({declarations:[r.a],imports:[i.n.forChild(r.a)]})],n)}()},582:function(n,e,o){"use strict";o.d(e,"a",function(){return c});var t=o(0),i=o(16),r=o(90),a=this&&this.__decorate||function(n,e,o,t){var i,r=arguments.length,a=r<3?e:null===t?t=Object.getOwnPropertyDescriptor(e,o):t;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(n,e,o,t);else for(var s=n.length-1;s>=0;s--)(i=n[s])&&(a=(r<3?i(a):r>3?i(e,o,a):i(e,o))||a);return r>3&&a&&Object.defineProperty(e,o,a),a},s=this&&this.__metadata||function(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)},c=function(){function n(n,e,o){this.navCtrl=n,this.navParams=e,this.firebaseService=o}return n.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad ResetpasswordPage")},n.prototype.backlogin=function(){this.navCtrl.pop()},n.prototype.Send=function(){var n=this;console.log(this.email),this.navCtrl.push("resetrequestPage",{email:this.email}),this.firebaseService.resetPassword(this.email.trim()).then(function(e){n.errorMessageReset=n.firebaseService.errorMessageReset})},n=a([Object(t.Component)({selector:"page-resetpassword",template:'\x3c!--\n  Generated template for the ResetpasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n--\x3e\n\x3c!-- Themes  register-flat--\x3e\n<ion-content class="background-image">\n  <ion-grid no-padding class="bg-color">\n    \x3c!-- logo --\x3e\n    \x3c!-- <ion-row>\n     <ion-col class="aling-bottom" align-self-stretch align-self-end col-10 offset-1 col-md-6 offset-md-3>\n      <img src="assets/images/Nessty-Logo-5.png" />\n      </ion-col>\n  </ion-row>\n    <ion-row>\n      <ion-col align-self-stretch col-10 offset-4 col-md-6 offset-md-5>\n       <span class="sub-title"><strong> Teen Talk!  </strong></span> \n      </ion-col>\n\n  </ion-row> --\x3e\n    <ion-row header align-items-start align-items-stretch>\n      \x3c!-- Section form>--\x3e\n      <ion-col col-10 offset-1 col-md-6 offset-md-3>\n        <form padding>\n          <ion-row class="wlm-msg" align-items-start>\n            <ion-col align-self-baseline col-12>\n              <ion-list text-center>\n                <img src="assets/images/Nesstynew.png" width="200px" height="200px" />\n              </ion-list>\n              <h1><strong>Get Password</strong> Enter email address</h1>\n            </ion-col>\n          </ion-row>\n          \x3c!-- Input-field --\x3e\n          <ion-row>\n            <ion-col col-12>\n              <div input-field>\n                \x3c!-- Input-field-email --\x3e\n                <ion-item no-padding>\n                  <ion-input class="text-input" type="email" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>\n                  \x3c!-- <ion-label no-margin *ngIf="!isEmailValid">{{data.errorPassword}}</ion-label> --\x3e\n                </ion-item>\n\n              </div>\n              <ion-label color="danger" no-margin>{{errorMessageReset}}</ion-label>\n              <br>\n              \x3c!-- Reset button --\x3e\n              <ion-col col-12 no-padding>\n                <button no-margin ion-button color="primary" full text-uppercase (click)="Send()">Send</button>\n              </ion-col>\n\n              \x3c!-- Description --\x3e\n              <div description text-center>\n                <ion-row>\n                  \x3c!-- Message --\x3e\n                  <ion-col col-12 no-padding no-margin>\n                    <p no-margin no-padding class="lbl-color"> Check email address</p>\n                  </ion-col>\n\n                  \x3c!-- Back to login --\x3e\n                  <ion-col col-12padding>\n                    <p no-margin no-padding> Go back to login? <a (click)="backlogin()">LOGIN</a> </p>\n                  </ion-col>\n                </ion-row>\n              </div>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click)="backlogin()"> <ion-icon name="arrow-back"> </ion-icon> </button>\n  </ion-fab>\n</ion-content>'}),s("design:paramtypes",[i.q,i.r,r.a])],n)}()}});
+webpackJsonp([15],{
+
+/***/ 545:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResetpasswordPageModule", function() { return ResetpasswordPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resetpassword__ = __webpack_require__(579);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ResetpasswordPageModule = /** @class */ (function () {
+    function ResetpasswordPageModule() {
+    }
+    ResetpasswordPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__resetpassword__["a" /* ResetpasswordPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__resetpassword__["a" /* ResetpasswordPage */]),
+            ],
+        })
+    ], ResetpasswordPageModule);
+    return ResetpasswordPageModule;
+}());
+
+//# sourceMappingURL=resetpassword.module.js.map
+
+/***/ }),
+
+/***/ 579:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetpasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_service__ = __webpack_require__(90);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ResetpasswordPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ResetpasswordPage = /** @class */ (function () {
+    function ResetpasswordPage(navCtrl, navParams, firebaseService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.firebaseService = firebaseService;
+    }
+    ResetpasswordPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ResetpasswordPage');
+    };
+    ResetpasswordPage.prototype.backlogin = function () {
+        this.navCtrl.pop();
+    };
+    ResetpasswordPage.prototype.Send = function () {
+        var _this = this;
+        console.log(this.email);
+        this.navCtrl.push('resetrequestPage', { email: this.email });
+        this.firebaseService.resetPassword(this.email.trim()).then(function (res) {
+            _this.errorMessageReset = _this.firebaseService.errorMessageReset;
+        });
+    };
+    ResetpasswordPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-resetpassword',template:/*ion-inline-start:"C:\Users\IRORO\Desktop\ionicprojects\nessty\src\pages\resetpassword\resetpassword.html"*/'<!--\n  Generated template for the ResetpasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<!-- Themes  register-flat-->\n<ion-content class="background-image">\n  <ion-grid no-padding class="bg-color">\n    <!-- logo -->\n    <!-- <ion-row>\n     <ion-col class="aling-bottom" align-self-stretch align-self-end col-10 offset-1 col-md-6 offset-md-3>\n      <img src="assets/images/Nessty-Logo-5.png" />\n      </ion-col>\n  </ion-row>\n    <ion-row>\n      <ion-col align-self-stretch col-10 offset-4 col-md-6 offset-md-5>\n       <span class="sub-title"><strong> Teen Talk!  </strong></span> \n      </ion-col>\n\n  </ion-row> -->\n    <ion-row header align-items-start align-items-stretch>\n      <!-- Section form>-->\n      <ion-col col-10 offset-1 col-md-6 offset-md-3>\n        <form padding>\n          <ion-row class="wlm-msg" align-items-start>\n            <ion-col align-self-baseline col-12>\n              <ion-list text-center>\n                <img src="assets/images/Nesstynew.png" width="200px" height="200px" />\n              </ion-list>\n              <h1><strong>Get Password</strong> Enter email address</h1>\n            </ion-col>\n          </ion-row>\n          <!-- Input-field -->\n          <ion-row>\n            <ion-col col-12>\n              <div input-field>\n                <!-- Input-field-email -->\n                <ion-item no-padding>\n                  <ion-input class="text-input" type="email" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>\n                  <!-- <ion-label no-margin *ngIf="!isEmailValid">{{data.errorPassword}}</ion-label> -->\n                </ion-item>\n\n              </div>\n              <ion-label color="danger" no-margin>{{errorMessageReset}}</ion-label>\n              <br>\n              <!-- Reset button -->\n              <ion-col col-12 no-padding>\n                <button no-margin ion-button color="primary" full text-uppercase (click)="Send()">Send</button>\n              </ion-col>\n\n              <!-- Description -->\n              <div description text-center>\n                <ion-row>\n                  <!-- Message -->\n                  <ion-col col-12 no-padding no-margin>\n                    <p no-margin no-padding class="lbl-color"> Check email address</p>\n                  </ion-col>\n\n                  <!-- Back to login -->\n                  <ion-col col-12padding>\n                    <p no-margin no-padding> Go back to login? <a (click)="backlogin()">LOGIN</a> </p>\n                  </ion-col>\n                </ion-row>\n              </div>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click)="backlogin()"> <ion-icon name="arrow-back"> </ion-icon> </button>\n  </ion-fab>\n</ion-content>'/*ion-inline-end:"C:\Users\IRORO\Desktop\ionicprojects\nessty\src\pages\resetpassword\resetpassword.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_firebase_service__["a" /* FirebaseServiceProvider */]])
+    ], ResetpasswordPage);
+    return ResetpasswordPage;
+}());
+
+//# sourceMappingURL=resetpassword.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=15.js.map

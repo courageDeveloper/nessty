@@ -16,6 +16,7 @@ import 'firebase/storage';
 import { Observable } from 'rxjs/Observable';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
+
 /*
   Generated class for the FirebaseServiceProvider provider.
 
@@ -614,7 +615,7 @@ export class FirebaseServiceProvider {
 
 
   uploadFiles(uploads: Users) {
-    console.log(uploads);
+    
     //if (uploads.blobFile !== "") {
       var fileName = uploads.blobFile.name;
       const storageRef = firebase.storage().ref();
